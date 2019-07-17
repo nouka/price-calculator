@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/price-calculator/static/css/main.728019e8.chunk.css",
+    "main.js": "/price-calculator/static/js/main.2ede7066.chunk.js",
+    "main.js.map": "/price-calculator/static/js/main.2ede7066.chunk.js.map",
+    "runtime~main.js": "/price-calculator/static/js/runtime~main.f2ed26b5.js",
+    "runtime~main.js.map": "/price-calculator/static/js/runtime~main.f2ed26b5.js.map",
+    "static/js/2.4e81ba5b.chunk.js": "/price-calculator/static/js/2.4e81ba5b.chunk.js",
+    "static/js/2.4e81ba5b.chunk.js.map": "/price-calculator/static/js/2.4e81ba5b.chunk.js.map",
+    "index.html": "/price-calculator/index.html",
+    "precache-manifest.cc075429cf671aec90d2c7263ed7e47d.js": "/price-calculator/precache-manifest.cc075429cf671aec90d2c7263ed7e47d.js",
+    "service-worker.js": "/price-calculator/service-worker.js",
+    "static/css/main.728019e8.chunk.css.map": "/price-calculator/static/css/main.728019e8.chunk.css.map"
+  }
+}
