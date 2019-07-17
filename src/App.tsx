@@ -26,6 +26,7 @@ class App extends React.Component<Props, State> {
         <h1>商品金額計算機</h1>
         <input
           type="number"
+          pattern="\d*"
           value={this.state.price}
           placeholder="ここに商品金額(税抜)を入力してください。"
           className="price"
