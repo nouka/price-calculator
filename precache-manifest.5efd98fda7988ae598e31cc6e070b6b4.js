@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e3fa72767bd83f49663815876fcd3b81",
+    "revision": "3ca215cbf9b88aaeaee1d91e64daee5f",
     "url": "/price-calculator/index.html"
   },
   {
-    "revision": "d0b4d2846c5a00559009",
+    "revision": "b89b45bedd6204fbf6a0",
     "url": "/price-calculator/static/css/main.b41aca32.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/price-calculator/static/js/2.4e81ba5b.chunk.js"
   },
   {
-    "revision": "d0b4d2846c5a00559009",
-    "url": "/price-calculator/static/js/main.0d2a4ea0.chunk.js"
+    "revision": "b89b45bedd6204fbf6a0",
+    "url": "/price-calculator/static/js/main.14c20c2f.chunk.js"
   },
   {
     "revision": "986d42adc9db9bba483c",
