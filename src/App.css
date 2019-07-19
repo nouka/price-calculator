@@ -1,27 +1,41 @@
-* {
-  font-size: xx-large;
-}
 h1 {
   background-color: navy;
-  color: white;
-  text-align: center;
+  box-sizing: border-box;
+  color: cornflowerblue;
+  font-size: 14px;
+  font-weight: normal;
   margin: 0;
-  padding: 0.5em;
+  padding: 5px;
+  text-align: center;
 }
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0 2%;
+  padding: 0;
 }
 li {
-  border-bottom: 1px dotted gray;
+  color: #069;
+  font-size: 28px;
+  line-height: 64px;
+  margin: 0;
+  padding: 0 21px;
+}
+li:nth-child(odd) {
+  background-color: #f6ffff;
+}
+li:nth-child(even) {
+  background-color: #e6ffff;
 }
 li span {
   display: block;
   float: right;
 }
 .price {
-  width: 92%;
-  margin: 2%;
-  padding: 2%;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  box-sizing: border-box;
+  font-size: 28px;
+  margin: 0;
+  padding: 17px;
+  width: 100vw;
 }
