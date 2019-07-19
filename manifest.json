@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Price Calculator",
+  "name": "商品金額を入力すると、割引金額を税込表示します。",
   "icons": [
     {
       "src": "favicon.ico",
