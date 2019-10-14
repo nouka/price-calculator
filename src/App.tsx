@@ -1,62 +1,47 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { connect } from "react-redux";
+import PriceForm from "./shared/PriceForm/";
+import DiscountPer from "./shared/DiscountPer/";
+import DiscountPrice from "./shared/DiscountPrice/";
+import {
+  PriceCalculatorState,
+  changeDiscountPer,
+  switchInTax,
+  changePrice
+} from "./modules/priceCalculator";
 
-interface Props {}
-interface State {
-  price: any;
+interface Props extends PriceCalculatorState {
+  dispatch(action: any): any;
 }
 
-class App extends React.Component<Props, State> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      price: ''
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(price: any) {
-    if (price.match(/[0-9]+/) || price.length === 0) {
-      this.setState({ price });
-    }
-  }
-  render() {
-    return (
-      <>
-        <h1>Price Calculator</h1>
-        <input
-          type="number"
-          pattern="\d*"
-          value={this.state.price}
-          placeholder="ここに商品金額(税抜)を入力"
-          className="price"
-          onChange={e => this.handleChange(e.target.value)}
-        />
-        <ul>
-          <Price price={this.state.price} discount={20} />
-          <Price price={this.state.price} discount={30} />
-          <Price price={this.state.price} discount={40} />
-          <Price price={this.state.price} discount={50} />
-        </ul>
-      </>
-    );
-  }
-}
-
-interface PriceProps {
-  price: number;
-  discount: number;
-}
-
-const Price = (props: PriceProps) => {
-  const tax = 1.08;
+const App = (props: Props) => {
+  const { dispatch } = props;
   return (
-    <li>
-      {props.discount}%Off
-      <span>
-        {Math.floor(props.price * (1 - props.discount / 100) * tax)}円
-      </span>
-    </li>
+    <>
+      <PriceForm
+        inTax={props.inTax}
+        onChange={value => dispatch(changePrice(value))}
+        onCheck={() => dispatch(switchInTax())}
+        price={props.price}
+      />
+      <DiscountPer
+        onChange={value => dispatch(changeDiscountPer(value))}
+        value={props.discountPer}
+      />
+      <DiscountPrice
+        discount={props.discountPer}
+        inTax={props.inTax}
+        price={props.price}
+        tax={props.tax}
+      />
+    </>
   );
 };
 
-export default App;
+const mapStateToProps = (state: PriceCalculatorState) => ({
+  discountPer: state.discountPer,
+  inTax: state.inTax,
+  price: state.price,
+  tax: state.tax
+});
+export default connect(mapStateToProps)(App);

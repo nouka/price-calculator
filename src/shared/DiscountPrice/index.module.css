@@ -1,0 +1,13 @@
+:local(.discountPrice) {
+  color: teal;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 2vw;
+  text-align: right;
+  width: 60vw;
+}
+:local(.discountPriceValue) {
+  font-size: 2em;
+  padding: 0 0.2em;
+}
