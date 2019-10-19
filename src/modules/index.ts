@@ -9,7 +9,7 @@ interface State {
   price: any;
   tax: number;
 }
-export type PriceCalculatorState = State;
+export type AppState = State;
 
 const initState: State = {
   discountPer: 20,

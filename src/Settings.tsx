@@ -4,13 +4,9 @@ import { Link } from "react-router-dom";
 import { List, ListItem, Button } from "@material-ui/core";
 import TaxRate from "./shared/TaxRate/";
 import InTax from "./shared/InTax/";
-import {
-  PriceCalculatorState,
-  changeTax,
-  switchInTax
-} from "./modules/priceCalculator";
+import { AppState, changeTax, switchInTax } from "./modules/";
 
-interface Props extends PriceCalculatorState {
+interface Props extends AppState {
   dispatch(action: any): any;
 }
 
@@ -31,7 +27,7 @@ const Settings = (props: Props) => {
     </List>
   );
 };
-const mapStateToProps = (state: PriceCalculatorState) => ({
+const mapStateToProps = (state: AppState) => ({
   tax: state.tax,
   inTax: state.inTax
 });

@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import {
   Input,
   InputAdornment,
@@ -14,15 +13,9 @@ interface Props {
   onChange(price: number): void;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {}
-  })
-);
-
 const PriceForm = (props: Props) => {
   const label = props.inTax ? "商品価格(税込)" : "商品価格(税抜)";
-  const classes = useStyles();
+  const price = props.price === 0 ? "" : Number(props.price);
   const handleChange = (price: string) => {
     props.onChange(Number(price));
   };
@@ -39,7 +32,7 @@ const PriceForm = (props: Props) => {
           }}
           onChange={e => handleChange(e.target.value)}
           placeholder={label}
-          value={props.price}
+          value={price}
         />
       </ListItemSecondaryAction>
     </ListItem>

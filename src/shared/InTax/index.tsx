@@ -11,7 +11,7 @@ interface Props {
   onChange(): void;
 }
 const InTax = (props: Props) => {
-  let label = props.inTax ? "税込" : "税抜";
+  const label = props.inTax ? "税込" : "税抜";
   return (
     <ListItem>
       <ListItemText>{label}</ListItemText>

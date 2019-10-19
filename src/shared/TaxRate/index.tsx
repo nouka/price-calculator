@@ -12,6 +12,7 @@ interface Props {
   onChange(e: any): void;
 }
 const TaxRate = (props: Props) => {
+  const tax = props.value === 0 ? "" : Number(props.value);
   const handleChange = (tax: string) => {
     props.onChange(Number(tax));
   };
@@ -26,7 +27,7 @@ const TaxRate = (props: Props) => {
             type: "number"
           }}
           onChange={e => handleChange(e.target.value)}
-          value={props.value}
+          value={tax}
         />
       </ListItemSecondaryAction>
     </ListItem>

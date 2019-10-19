@@ -4,13 +4,9 @@ import { List } from "@material-ui/core";
 import PriceForm from "./shared/PriceForm/";
 import DiscountPer from "./shared/DiscountPer/";
 import DiscountPrice from "./shared/DiscountPrice/";
-import {
-  PriceCalculatorState,
-  changeDiscountPer,
-  changePrice
-} from "./modules/priceCalculator";
+import { AppState, changeDiscountPer, changePrice } from "./modules/";
 
-interface Props extends PriceCalculatorState {
+interface Props extends AppState {
   dispatch(action: any): any;
 }
 
@@ -37,7 +33,7 @@ const App = (props: Props) => {
   );
 };
 
-const mapStateToProps = (state: PriceCalculatorState) => ({
+const mapStateToProps = (state: AppState) => ({
   discountPer: state.discountPer,
   inTax: state.inTax,
   price: state.price,

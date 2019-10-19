@@ -8,10 +8,10 @@ import "./index.css";
 import App from "./App";
 import Settings from "./Settings";
 import Title from "./shared/Title/";
-import priceCalculator from "./modules/priceCalculator";
+import reducer from "./modules/";
 import * as serviceWorker from "./serviceWorker";
 
-const store = createStore(priceCalculator, compose(persistState()));
+const store = createStore(reducer, compose(persistState()));
 
 const Root = () => (
   <Provider store={store}>

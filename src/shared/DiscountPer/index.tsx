@@ -1,11 +1,10 @@
 import React from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import {
-  Slider,
-  Typography,
   ListItem,
   ListItemText,
-  ListItemSecondaryAction
+  ListItemSecondaryAction,
+  Slider
 } from "@material-ui/core";
 
 interface Props {

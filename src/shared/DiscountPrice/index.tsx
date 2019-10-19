@@ -9,11 +9,12 @@ interface Props {
 }
 
 const DiscountPrice = (props: Props) => {
-  let purePrice = props.inTax
-    ? props.price - (props.price * props.tax) / (100 + props.tax)
+  const fixedNumber = (number: any) => parseInt(Math.round(number).toFixed(), 10);
+  const purePrice = props.inTax
+    ? fixedNumber(props.price - (props.price * props.tax) / (100 + props.tax))
     : props.price;
-  let tax = props.tax / 100 + 1;
-  let discountPrice = purePrice * (1 - props.discount / 100);
+  const tax = props.tax / 100 + 1;
+  const discountPrice = fixedNumber(purePrice * (1 - props.discount / 100) * tax);
   return (
     <ListItem>
       <TextField
@@ -22,7 +23,7 @@ const DiscountPrice = (props: Props) => {
           endAdornment: <InputAdornment position="end">円</InputAdornment>,
           readOnly: true
         }}
-        value={Math.floor(discountPrice * tax)}
+        value={discountPrice}
         variant="outlined"
       />
     </ListItem>
