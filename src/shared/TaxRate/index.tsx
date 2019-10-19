@@ -1,23 +1,36 @@
 import React from "react";
-import Style from "./index.module.css";
+import {
+  Input,
+  InputAdornment,
+  ListItem,
+  ListItemText,
+  ListItemSecondaryAction
+} from "@material-ui/core";
 
 interface Props {
   value: number;
   onChange(e: any): void;
 }
-const TaxRate = (props: Props) => (
-  <>
-    <label className={Style.label}>
-      <span className={Style.prefix}>税率</span>
-      <input
-        className={Style.input}
-        onChange={e => props.onChange(e.currentTarget.value)}
-        type="number"
-        value={props.value}
-      />
-      <span className={Style.suffix}>%</span>
-    </label>
-  </>
-);
+const TaxRate = (props: Props) => {
+  const handleChange = (tax: string) => {
+    props.onChange(Number(tax));
+  };
+  return (
+    <ListItem>
+      <ListItemText>税率</ListItemText>
+      <ListItemSecondaryAction>
+        <Input
+          endAdornment={<InputAdornment position="end">%</InputAdornment>}
+          inputProps={{
+            min: 0,
+            type: "number"
+          }}
+          onChange={e => handleChange(e.target.value)}
+          value={props.value}
+        />
+      </ListItemSecondaryAction>
+    </ListItem>
+  );
+};
 
 export default TaxRate;

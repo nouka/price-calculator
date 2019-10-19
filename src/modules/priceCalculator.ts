@@ -29,11 +29,9 @@ const reducer = (state: any = initState, action: any) => {
         inTax: !state.inTax
       });
     case CHANGE_PRICE:
-      if (action.price.match(/[0-9]+/) || action.price.length === 0) {
-        return Object.assign({}, state, {
-          price: action.price
-        });
-      }
+      return Object.assign({}, state, {
+        price: action.price
+      });
     case CHANGE_TAX:
       return Object.assign({}, state, {
         tax: action.tax
@@ -52,7 +50,7 @@ export const switchInTax = () => ({
   type: SWITCH_IN_TAX
 });
 
-export const changePrice = (price: any) => ({
+export const changePrice = (price: number) => ({
   type: CHANGE_PRICE,
   price
 });

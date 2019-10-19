@@ -1,21 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Style from "./index.module.css";
-import SettingIcon from "../../settings.svg";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { AppBar, Toolbar, Typography, IconButton } from "@material-ui/core";
+import { Settings } from "@material-ui/icons";
 
 interface Props {
   label: string;
 }
 
-const Title = (props: Props) => (
-  <h1 className={Style.title}>
-    <Link to="/" className={Style.titleLink}>
-      {props.label}
-    </Link>
-    <Link to="/settings">
-      <img src={SettingIcon} alt="設定" className={Style.icon} />
-    </Link>
-  </h1>
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1
+    },
+    title: {
+      flexGrow: 1
+    },
+    icon: {
+      color: "white"
+    }
+  })
 );
+
+const Title = (props: Props) => {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" noWrap className={classes.title}>
+            {props.label}
+          </Typography>
+          <IconButton edge="end">
+            <Link to="/settings" className={classes.icon}>
+              <Settings />
+            </Link>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+};
 
 export default Title;

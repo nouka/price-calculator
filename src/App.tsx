@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import { List } from "@material-ui/core";
 import PriceForm from "./shared/PriceForm/";
 import DiscountPer from "./shared/DiscountPer/";
 import DiscountPrice from "./shared/DiscountPrice/";
 import {
   PriceCalculatorState,
   changeDiscountPer,
-  switchInTax,
   changePrice
 } from "./modules/priceCalculator";
 
@@ -17,11 +17,10 @@ interface Props extends PriceCalculatorState {
 const App = (props: Props) => {
   const { dispatch } = props;
   return (
-    <>
+    <List>
       <PriceForm
         inTax={props.inTax}
         onChange={value => dispatch(changePrice(value))}
-        onCheck={() => dispatch(switchInTax())}
         price={props.price}
       />
       <DiscountPer
@@ -34,7 +33,7 @@ const App = (props: Props) => {
         price={props.price}
         tax={props.tax}
       />
-    </>
+    </List>
   );
 };
 

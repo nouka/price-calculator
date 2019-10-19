@@ -1,5 +1,5 @@
 import React from "react";
-import Style from "./index.module.css";
+import { TextField, InputAdornment, ListItem } from "@material-ui/core";
 
 interface Props {
   inTax: boolean;
@@ -9,15 +9,23 @@ interface Props {
 }
 
 const DiscountPrice = (props: Props) => {
-  let tax = 1 + props.tax / 100;
-  let price = props.inTax ? props.price / tax : props.price;
+  let purePrice = props.inTax
+    ? props.price - (props.price * props.tax) / (100 + props.tax)
+    : props.price;
+  let tax = props.tax / 100 + 1;
+  let discountPrice = purePrice * (1 - props.discount / 100);
   return (
-    <p className={Style.discountPrice}>
-      <strong className={Style.discountPriceValue}>
-        {Math.floor(price * (1 - props.discount / 100) * tax)}
-      </strong>
-      円
-    </p>
+    <ListItem>
+      <TextField
+        fullWidth
+        InputProps={{
+          endAdornment: <InputAdornment position="end">円</InputAdornment>,
+          readOnly: true
+        }}
+        value={Math.floor(discountPrice * tax)}
+        variant="outlined"
+      />
+    </ListItem>
   );
 };
 
