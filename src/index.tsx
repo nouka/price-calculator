@@ -1,22 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { compose, createStore } from "redux";
 import persistState from "redux-localstorage";
-import { Provider } from "react-redux";
-import "./index.css";
 import App from "./App";
+import reducer from "./modules/";
 import Settings from "./Settings";
 import Title from "./shared/Title/";
-import reducer from "./modules/";
 import * as serviceWorker from "./serviceWorker";
+import "./index.css";
 
 const store = createStore(reducer, compose(persistState()));
 
 const Root = () => (
   <Provider store={store}>
     <Router basename={process.env.PUBLIC_URL}>
-      <Title label="割引価格計算" />
+      <Title label="Price Calculator" />
       <Route path="/" exact component={App} />
       <Route path="/settings" component={Settings} />
     </Router>

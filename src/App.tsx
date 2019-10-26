@@ -23,18 +23,14 @@ const App = (props: Props) => {
         onChange={value => dispatch(changeDiscountPer(value))}
         value={props.discountPer}
       />
-      <DiscountPrice
-        discount={props.discountPer}
-        inTax={props.inTax}
-        price={props.price}
-        tax={props.tax}
-      />
+      <DiscountPrice discountPrice={props.discountPrice} />
     </List>
   );
 };
 
 const mapStateToProps = (state: AppState) => ({
   discountPer: state.discountPer,
+  discountPrice: state.discountPrice,
   inTax: state.inTax,
   price: state.price,
   tax: state.tax

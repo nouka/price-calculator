@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { List, ListItem, Button } from "@material-ui/core";
 import TaxRate from "./shared/TaxRate/";
 import InTax from "./shared/InTax/";
@@ -20,8 +19,8 @@ const Settings = (props: Props) => {
       />
       <InTax onChange={() => dispatch(switchInTax())} inTax={props.inTax} />
       <ListItem>
-        <Button variant="contained">
-          <Link to="/">戻る</Link>
+        <Button href="/" fullWidth variant="contained">
+          戻る
         </Button>
       </ListItem>
     </List>
