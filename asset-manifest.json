@@ -1,15 +1,22 @@
 {
   "files": {
-    "main.css": "/price-calculator/static/css/main.7c9d30d6.chunk.css",
-    "main.js": "/price-calculator/static/js/main.607d4177.chunk.js",
-    "main.js.map": "/price-calculator/static/js/main.607d4177.chunk.js.map",
-    "runtime~main.js": "/price-calculator/static/js/runtime~main.f2ed26b5.js",
-    "runtime~main.js.map": "/price-calculator/static/js/runtime~main.f2ed26b5.js.map",
-    "static/js/2.de81d462.chunk.js": "/price-calculator/static/js/2.de81d462.chunk.js",
-    "static/js/2.de81d462.chunk.js.map": "/price-calculator/static/js/2.de81d462.chunk.js.map",
+    "main.css": "/price-calculator/static/css/main.121de7ba.chunk.css",
+    "main.js": "/price-calculator/static/js/main.f9a24aea.chunk.js",
+    "main.js.map": "/price-calculator/static/js/main.f9a24aea.chunk.js.map",
+    "runtime-main.js": "/price-calculator/static/js/runtime-main.99758b03.js",
+    "runtime-main.js.map": "/price-calculator/static/js/runtime-main.99758b03.js.map",
+    "static/js/2.c73f777f.chunk.js": "/price-calculator/static/js/2.c73f777f.chunk.js",
+    "static/js/2.c73f777f.chunk.js.map": "/price-calculator/static/js/2.c73f777f.chunk.js.map",
     "index.html": "/price-calculator/index.html",
-    "precache-manifest.e9d8df4f37f4b2f80d890b47fe7343d5.js": "/price-calculator/precache-manifest.e9d8df4f37f4b2f80d890b47fe7343d5.js",
+    "precache-manifest.bfba25989994dad3cb7a50a3ce4aa230.js": "/price-calculator/precache-manifest.bfba25989994dad3cb7a50a3ce4aa230.js",
     "service-worker.js": "/price-calculator/service-worker.js",
-    "static/css/main.7c9d30d6.chunk.css.map": "/price-calculator/static/css/main.7c9d30d6.chunk.css.map"
-  }
+    "static/css/main.121de7ba.chunk.css.map": "/price-calculator/static/css/main.121de7ba.chunk.css.map",
+    "static/js/2.c73f777f.chunk.js.LICENSE": "/price-calculator/static/js/2.c73f777f.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.99758b03.js",
+    "static/js/2.c73f777f.chunk.js",
+    "static/css/main.121de7ba.chunk.css",
+    "static/js/main.f9a24aea.chunk.js"
+  ]
 }
