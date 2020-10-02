@@ -17,7 +17,7 @@ const initState: State = {
   discountPrice: 0,
   inTax: true,
   price: "",
-  tax: 8
+  tax: 8,
 };
 
 const reducer = (state: any = initState, action: any) => {
@@ -29,29 +29,19 @@ const reducer = (state: any = initState, action: any) => {
   );
   switch (action.type) {
     case CHANGE_DISCOUNT_PER:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         discountPer: action.percent,
-        discountPrice: discountPrice
-      });
+        discountPrice: discountPrice,
+      };
     case CHANGE_PRICE:
-      return Object.assign({}, state, {
-        price: action.price,
-        discountPrice: discountPrice
-      });
+      return { ...state, price: action.price, discountPrice: discountPrice };
     case CHANGE_TAX:
-      return Object.assign({}, state, {
-        tax: action.tax,
-        discountPrice: discountPrice
-      });
+      return { ...state, tax: action.tax, discountPrice: discountPrice };
     case SWITCH_IN_TAX:
-      return Object.assign({}, state, {
-        inTax: !state.inTax,
-        discountPrice: discountPrice
-      });
+      return { ...state, inTax: !state.inTax, discountPrice: discountPrice };
   }
-  return Object.assign({}, state, {
-    discountPrice: discountPrice
-  });
+  return { ...state, discountPrice: discountPrice };
 };
 export default reducer;
 
@@ -61,25 +51,26 @@ const calcDiscountPrice = (
   inTax: boolean,
   tax: number
 ) => {
-  const purePrice = inTax ? price - (price * tax) / (100 + tax) : price;
-  return (purePrice * (1 - discountPer / 100) * (tax / 100 + 1)).toFixed();
+  const taxPer = tax / 100 + 1;
+  const purePrice = !inTax ? price : price / taxPer;
+  return (purePrice * (1 - discountPer / 100) * taxPer).toFixed();
 };
 
 export const changeDiscountPer = (percent: number) => ({
   type: CHANGE_DISCOUNT_PER,
-  percent
+  percent,
 });
 
 export const changePrice = (price: number) => ({
   type: CHANGE_PRICE,
-  price
+  price,
 });
 
 export const changeTax = (tax: number) => ({
   type: CHANGE_TAX,
-  tax
+  tax,
 });
 
 export const switchInTax = () => ({
-  type: SWITCH_IN_TAX
+  type: SWITCH_IN_TAX,
 });
